@@ -35,6 +35,10 @@
   background-color: #34397b;
 }
 
+.overflow-hidden:hover #secondhalf {
+    background-color: #34397b;
+  }
+
 #dailybtn,
 #weeklybtn,
 #monthlybtn {
