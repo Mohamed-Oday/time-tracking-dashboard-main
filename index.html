@@ -27,7 +27,7 @@
       <div id="card-1" class="row-span-2 col-span-1">
         <div
           id="userCard"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px]"
+          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-full"
         >
           <div id="secondHalf"></div>
           <div
@@ -52,13 +52,13 @@
           >
             <button
               id="dailybtn"
-              class="text-[13px] text-[#595D9C] pb-[28px] relative z-10"
+              class="text-[13px] text-[#595D9C] relative z-10"
             >
               Daily
             </button>
             <button
               id="weeklybtn"
-              class="text-[13px] text-[#595D9C] pb-[28px] relative z-10"
+              class="text-[13px] text-[#595D9C] relative z-10"
             >
               Weekly
             </button>
@@ -76,8 +76,9 @@
           id="word-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#FF8B64] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+        <div class="work icon"></div>
+          <div id="secondhalf" class="w-full px-[30px]">
+            <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Work</p>
@@ -99,7 +100,7 @@
               Last Week - 36hrs
             </p>
           </div>
-          <div class="work icon"></div>
+          </div>
         </div>
       </div>
       <div id="card-3" class="overflow-hidden">
@@ -107,8 +108,9 @@
           id="play-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#56C2E6] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+          <div class="play icon"></div>
+          <div id="secondhalf" class="w-full px-[30px]">
+            <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Play</p>
@@ -130,7 +132,8 @@
               Last Week - 8hrs
             </p>
           </div>
-          <div class="play icon"></div>
+          </div>
+          
         </div>
       </div>
       <div id="card-4" class="overflow-hidden">
@@ -138,8 +141,10 @@
           id="study-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#FF5E7D] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+        <div class="study icon">
+        </div>
+            <div id="secondhalf" class="w-full px-[30px]">
+              <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Study</p>
@@ -161,7 +166,8 @@
               Last Week - 7hrs
             </p>
           </div>
-          <div class="study icon"></div>
+            </div>
+          
         </div>
       </div>
 
@@ -170,8 +176,15 @@
           id="exercise-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#4BCF83] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+        <div>
+          <img
+            src="assets/images/icon-exercise.svg"
+            alt="#"
+            class="absolute top-0 right-[20px]"
+          />
+        </div>
+          <div id="secondhalf" class="w-full px-[30px]">
+            <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Exercise</p>
@@ -193,13 +206,8 @@
               Last Week - 5hrs
             </p>
           </div>
-          <div>
-            <img
-              src="assets/images/icon-exercise.svg"
-              alt="#"
-              class="absolute top-0 right-[20px]"
-            />
           </div>
+          
         </div>
       </div>
 
@@ -208,8 +216,9 @@
           id="social-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#7235D1] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+        <div class="social icon"></div>
+          <div id="secondhalf" class="w-full px-[30px]">
+            <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Social</p>
@@ -232,7 +241,8 @@
             </p>
           </div>
 
-          <div class="social icon"></div>
+          </div>
+          
         </div>
       </div>
 
@@ -241,8 +251,9 @@
           id="selfCare-card"
           class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#F1C75B] relative"
         >
-          <div id="secondhalf" class="w-full z-10"></div>
-          <div
+        <div class="self-care icon"></div>
+          <div id="secondhalf" class="w-full px-[30px]">
+            <div
             class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
           >
             <p class="text-[15px] text-white font-[500]">Self Care</p>
@@ -264,7 +275,7 @@
               Last Week - 2hrs
             </p>
           </div>
-          <div class="self-care icon"></div>
+          </div>
         </div>
       </div>
     </main>
