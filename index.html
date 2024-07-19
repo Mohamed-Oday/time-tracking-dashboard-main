@@ -20,54 +20,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/tailwind.config.js"></script>
   </head>
-  <body
-    class="bg-[#0A0F27] min-h-screen flex flex-col items-center justify-center box-border font-Rubik"
-  >
+  <body class="bg-[#0A0F27] min-h-screen flex flex-col items-center justify-center box-border font-Rubik">
     <main class="main-grid">
       <div id="card-1" class="row-span-2 col-span-1">
-        <div
-          id="userCard"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-full"
-        >
+        <div id="userCard" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-full">
           <div id="secondHalf"></div>
-          <div
-            class="imageContainer bg-white z-10 h-[85px] w-[85px] rounded-full border-solid border-[2.5px] border-white"
-          >
-            <img
-              src="assets/images/image-jeremy.png"
-              alt="Jeremy's pic"
-              class="w-[84px] z-10"
-            />
+          <div class="imageContainer bg-white z-10 h-[85px] w-[85px] rounded-full border-solid border-[2.5px] border-white">
+            <img src="assets/images/image-jeremy.png" alt="Jeremy's pic" class="w-[84px] z-10"/>
           </div>
-          <p class="text-[12px] text-[#B4ACFF] font-[300] z-10 pt-[40px]">
-            Report for
-          </p>
-          <h1
-            class="text-white text-[30px] font-[300] pb-[115px] relative z-10"
-          >
-            Jeremy Robson
-          </h1>
-          <div
-            class="button-container"
-          >
-            <button
-              id="dailybtn"
-              class="text-[13px] text-[#595D9C] relative z-10"
-            >
-              Daily
-            </button>
-            <button
-              id="weeklybtn"
-              class="text-[13px] text-[#595D9C] relative z-10"
-            >
-              Weekly
-            </button>
-            <button
-              id="monthlybtn"
-              class="text-[13px] text-[#595D9C] relative z-10"
-            >
-              Monthly
-            </button>
+          <p class="text-[12px] text-[#B4ACFF] font-[300] z-10 pt-[40px]">Report for</p>
+          <h1 class="text-white text-[30px] font-[300] pb-[115px] relative z-10">Jeremy Robson</h1>
+          <div class="button-container">
+            <button id="dailybtn" class="btn daily text-[13px] text-[#595D9C] relative z-10" onclick="getDaily()">Daily</button>
+            <button id="weeklybtn" class="btn weekly text-[13px] text-[#595D9C] relative z-10" onclick="getWeekly()">Weekly</button>
+            <button id="monthlybtn" class="btn monthly text-[13px] text-[#595D9C] relative z-10" onclick="getMonthly()">Monthly</button>
           </div>
         </div>
       </div>
@@ -87,193 +53,99 @@
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="work-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              32hrs
-            </h1>
-            <p
-              id="latest-work"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 36hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10"></h1>
+            <p id="latesthrs" class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
           </div>
         </div>
       </div>
       <div id="card-3" class="overflow-hidden">
-        <div
-          id="play-card"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#56C2E6] relative"
-        >
+        <div id="play-card" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#56C2E6] relative">
           <div class="play icon"></div>
           <div id="secondhalf" class="w-full px-[30px]">
-            <div
-            class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
-          >
+            <div class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]">
             <p class="text-[15px] text-white font-[500]">Play</p>
             <button>
               <img src="assets/images/icon-ellipsis.svg" alt="#" />
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="play-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              10hrs
-            </h1>
-            <p
-              id="latest-play"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 8hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10"></h1>
+            <p id="latesthrs" class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
           </div>
-          
         </div>
       </div>
       <div id="card-4" class="overflow-hidden">
-        <div
-          id="study-card"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#FF5E7D] relative"
-        >
+        <div id="study-card" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#FF5E7D] relative">
         <div class="study icon">
         </div>
             <div id="secondhalf" class="w-full px-[30px]">
-              <div
-            class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
-          >
+              <div class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]">
             <p class="text-[15px] text-white font-[500]">Study</p>
             <button>
               <img src="assets/images/icon-ellipsis.svg" alt="#" />
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="study-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              4hrs
-            </h1>
-            <p
-              id="latest-study"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 7hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10"></h1>
+            <p id="latesthrs"class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
             </div>
-          
         </div>
       </div>
 
       <div id="card-5" class="overflow-hidden">
-        <div
-          id="exercise-card"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#4BCF83] relative"
-        >
+        <div id="exercise-card" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#4BCF83] relative">
         <div>
-          <img
-            src="assets/images/icon-exercise.svg"
-            alt="#"
-            class="absolute top-0 right-[20px]"
-          />
+          <img src="assets/images/icon-exercise.svg" alt="#" class="absolute top-0 right-[20px]"/>
         </div>
           <div id="secondhalf" class="w-full px-[30px]">
-            <div
-            class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
-          >
+            <div class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]">
             <p class="text-[15px] text-white font-[500]">Exercise</p>
             <button>
               <img src="assets/images/icon-ellipsis.svg" alt="#" />
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="exercise-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              4hrs
-            </h1>
-            <p
-              id="latest-exercise"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 5hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10"></h1>
+            <p id="latesthrs" class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
           </div>
-          
         </div>
       </div>
 
       <div id="card-6" class="overflow-hidden">
-        <div
-          id="social-card"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#7235D1] relative"
-        >
+        <div id="social-card" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#7235D1] relative">
         <div class="social icon"></div>
           <div id="secondhalf" class="w-full px-[30px]">
-            <div
-            class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
-          >
+            <div class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]">
             <p class="text-[15px] text-white font-[500]">Social</p>
             <button>
               <img src="assets/images/icon-ellipsis.svg" alt="#" />
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="social-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              5hrs
-            </h1>
-            <p
-              id="latest-social"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 10hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10"></h1>
+            <p id="latesthrs" class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
-
           </div>
-          
         </div>
       </div>
 
       <div id="card-7" class="overflow-hidden">
-        <div
-          id="selfCare-card"
-          class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#F1C75B] relative"
-        >
+        <div id="selfCare-card" class="flex flex-col items-start justify-center p-[30px] rounded-[18px] w-[255px] h-[245px] bg-[#F1C75B] relative">
         <div class="self-care icon"></div>
           <div id="secondhalf" class="w-full px-[30px]">
-            <div
-            class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]"
-          >
+            <div class="flex flex-row w-full justify-between pb-[20px] relative z-10 pt-[30px]">
             <p class="text-[15px] text-white font-[500]">Self Care</p>
             <button>
               <img src="assets/images/icon-ellipsis.svg" alt="#" />
             </button>
           </div>
           <div class="time-container">
-            <h1
-              id="selfCare-hours"
-              class="text-white text-[50px] font-[300] relative z-10"
-            >
-              2hrs
-            </h1>
-            <p
-              id="latest-selfCare"
-              class="text-[#595D9C] text-[13px] relative z-10"
-            >
-              Last Week - 2hrs
-            </p>
+            <h1 id="hours" class="text-white text-[50px] font-[300] relative z-10" ></h1>
+            <p id="latesthrs" class="text-[#595D9C] text-[13px] relative z-10"></p>
           </div>
           </div>
         </div>

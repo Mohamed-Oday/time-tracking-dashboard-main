@@ -1,68 +1,65 @@
-const dailybtn = document.getElementById("dailybtn");
-const weeklybtn = document.getElementById("weeklybtn");
-const monthlybtn = document.getElementById("monthlybtn");
+let info = [];
 
-const work_hours = document.getElementById("work-hours");
-const play_hours = document.getElementById("play-hours");
-const study_hours = document.getElementById("study-hours");
-const exercise_hours = document.getElementById("exercise-hours");
-const social_hours = document.getElementById("social-hours");
-const selfCare_hours = document.getElementById("selfCare-hours");
+fetch("assets/js/data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    info = data;
+    console.log("Data fetched successfully:", info); // Debugging log
+    getWeekly();
+  })
+  .catch((error) => {
+    console.error("Error fetching the JSON data: ", error);
+  });
 
-const latest_work = document.getElementById("latest-work");
-const latest_play = document.getElementById("latest-play");
-const latest_study = document.getElementById("latest-study");
-const latest_exercise = document.getElementById("latest-exercise");
-const latest_social = document.getElementById("latest-social");
-const latest_selfCare = document.getElementById("latest-selfCare");
+const hours = document.querySelectorAll("#hours");
+const recent = document.querySelectorAll("#latesthrs");
+const dailyBtn = document.querySelector("#dailybtn");
+const weeklyBtn = document.querySelector("#weeklybtn");
+const monthlyBtn = document.querySelector("#monthlybtn");
 
-dailybtn.addEventListener("click", () => {
-  // Today's Hours
-  work_hours.textContent = "8hrs";
-  play_hours.textContent = "3hrs";
-  study_hours.textContent = "1hrs";
-  exercise_hours.textContent = "1hrs";
-  social_hours.textContent = "2hrs";
-  selfCare_hours.textContent = "1hrs";
-  // Last day's hours
-  latest_work.textContent = "Last Day - 9hrs";
-  latest_play.textContent = "Last Day - 2hrs";
-  latest_study.textContent = "Last Day - 2hrs";
-  latest_exercise.textContent = "Last Day - 1hrs";
-  latest_social.textContent = "Last Day - 1hrs";
-  latest_selfCare.textContent = "Last Day - 1hrs";
-});
+function getDaily() {
+  dailyBtn.classList.add("active");
+  weeklyBtn.classList.remove("active");
+  monthlyBtn.classList.remove("active");
 
-weeklybtn.addEventListener("click", () => {
-  // Weekly's Hours
-  work_hours.textContent = "32hrs";
-  play_hours.textContent = "10hrs";
-  study_hours.textContent = "4hrs";
-  exercise_hours.textContent = "4hrs";
-  social_hours.textContent = "5hrs";
-  selfCare_hours.textContent = "2hrs";
-  // Last Week's hours
-  latest_work.textContent = "Last Week - 36hrs";
-  latest_play.textContent = "Last Week - 8hrs";
-  latest_study.textContent = "Last Week - 7hrs";
-  latest_exercise.textContent = "Last Week - 5hrs";
-  latest_social.textContent = "Last Week - 10hrs";
-  latest_selfCare.textContent = "Last Week - 2hrs";
-});
+  hours.forEach((hours, i) => {
+    hours.innerHTML = `${info[i].timeframes.daily.current}hrs`;
+  });
 
-monthlybtn.addEventListener("click", () => {
-  // Weekly's Hours
-  work_hours.textContent = "115hrs";
-  play_hours.textContent = "42hrs";
-  study_hours.textContent = "30hrs";
-  exercise_hours.textContent = "12hrs";
-  social_hours.textContent = "24hrs";
-  selfCare_hours.textContent = "9hrs";
-  // Last Week's hours
-  latest_work.textContent = "Last Month - 235hrs";
-  latest_play.textContent = "Last Month - 90hrs";
-  latest_study.textContent = "Last Month - 65hrs";
-  latest_exercise.textContent = "Last Month - 25hrs";
-  latest_social.textContent = "Last Month - 72hrs";
-  latest_selfCare.textContent = "Last Month - 19hrs";
-});
+  recent.forEach((latesthrs, i) => {
+    latesthrs.innerHTML = `Last day - ${info[i].timeframes.daily.previous}hrs`;
+  });
+}
+
+function getWeekly(){
+  dailyBtn.classList.remove("active")
+  weeklyBtn.classList.add("active")
+  monthlyBtn.classList.remove("active")
+
+  hours.forEach((hours, i) =>{
+    hours.innerHTML = `${info[i].timeframes.weekly.current}hrs`;
+  })
+
+  recent.forEach((latesthrs, i) => {
+    latesthrs.innerHTML = `Last Week - ${info[i].timeframes.weekly.previous}hrs`;
+  });
+}
+
+function getMonthly(){
+  dailyBtn.classList.remove("active")
+  weeklyBtn.classList.remove("active")
+  monthlyBtn.classList.add("active")
+
+  hours.forEach((hours, i) =>{
+    hours.innerHTML = `${info[i].timeframes.monthly.current}hrs`;
+  })
+
+  recent.forEach((latesthrs, i) => {
+    latesthrs.innerHTML = `Last Week - ${info[i].timeframes.monthly.previous}hrs`;
+  });
+}

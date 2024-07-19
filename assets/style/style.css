@@ -134,6 +134,11 @@
   background-image: url("../images/icon-self-care.svg");
 }
 
+.btn.active{
+  color: white;
+  font-size: 15px;
+}
+
 @media (max-width: 700px) {
   .main-grid {
     width: auto;
